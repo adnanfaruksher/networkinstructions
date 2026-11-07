@@ -7,7 +7,7 @@ import json, subprocess, sys, uuid, urllib.request, pathlib
 API = "http://100.111.83.35:5678/api/v1"
 NAME = "Networkinstructors UI page"
 PATH = "networkinstructors"
-html = (pathlib.Path(__file__).parent / "Networkinstructors-Assistant.html").read_text()
+html = (pathlib.Path(__file__).parent / "index.html").read_text()
 assert "{{" not in html and not html.startswith("="), "page would be read as an n8n expression"
 key = subprocess.check_output(["security", "find-generic-password", "-s", "n8n-api-key", "-w"], text=True).strip()
 
